@@ -1,6 +1,11 @@
 // ignore: file_names
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/widgets.dart';
 import 'package:portfolio_/mainPage/imagesvg.dart';
 import 'package:flutter/material.dart';
+import 'package:social_media_flutter/widgets/icons.dart';
+import 'package:social_media_flutter/widgets/text.dart';
+import 'package:image_card/image_card.dart';
 
 class RightWidget extends StatelessWidget {
   const RightWidget({super.key});
@@ -16,7 +21,8 @@ class RightWidget extends StatelessWidget {
             backgroundColor: Colors.white,
             actions: const <Widget>[
               Row(
-                mainAxisAlignment: MainAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
                   TextButton(
                       onPressed: null,
@@ -50,11 +56,105 @@ class RightWidget extends StatelessWidget {
             ],
           ),
           Container(
-            margin: const EdgeInsets.only(left: 495.0, top: 100.0),
+            // margin: const EdgeInsets.only(left: 495.0, top: 100.0),
+            alignment: Alignment.topRight,
             child: const SvgLogo(),
           ),
+          MediaWidget(),
         ],
       ),
+    );
+  }
+}
+
+class MediaWidget extends StatelessWidget {
+  const MediaWidget({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: <Widget>[
+        SingleChildScrollView(
+          child: Center(
+            child: Container(
+              width: 150.0,
+              height: 100.0,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(10),
+                color: Colors.white,
+                boxShadow: const [
+                  BoxShadow(
+                    color: Colors.grey,
+                    spreadRadius: 3,
+                  ),
+                ],
+              ),
+              child: Center(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    SocialWidget(
+                      placeholderText: 'Salah Ben Sarar',
+                      iconData: SocialIconsFlutter
+                          .linkedin_box, //use the respective social logo
+                      iconColor: const Color.fromARGB(
+                          255, 90, 88, 88), //(optional, default - grey)
+                      iconSize: 12,
+                      link:
+                          'https://www.linkedin.com/in/salah-bensarar-082770212/', //provide the link
+                      placeholderStyle: const TextStyle(
+                        color: Colors.black,
+                        fontSize: 12,
+                        fontFamily: 'Poppins',
+                      ),
+                    ),
+                    SocialWidget(
+                      placeholderText: 'Salah Ben Sarar',
+                      iconData: SocialIconsFlutter.github,
+                      iconColor: const Color.fromARGB(255, 90, 88, 88),
+                      iconSize: 12,
+            
+                      link:
+                          'https://github.com/salahbensarar1', //provide the link
+                      placeholderStyle: const TextStyle(
+                        color: Colors.black,
+                        fontSize: 12,
+                        fontFamily: 'Poppins',
+                      ), //placeholder text style
+                    ),
+                    SocialWidget(
+                      placeholderText: 'Salah Ben Sarar',
+                      iconData: SocialIconsFlutter
+                          .facebook, //use the respective social logo
+                      iconColor: const Color.fromARGB(255, 90, 88, 88),
+                      iconSize: 12,
+                      link:
+                          'https://www.facebook.com/salah.ben.157', //provide the link
+                      placeholderStyle: const TextStyle(
+                        color: Colors.black,
+                        fontSize: 12,
+                        fontFamily: 'Poppins',
+                      ),
+                    ),
+                    SocialWidget(
+                      placeholderText: 'Salah Ben Sarar',
+                      iconData: SocialIconsFlutter.instagram,
+                      iconColor: const Color.fromARGB(255, 90, 88, 88),
+                      iconSize: 12,
+                      link: 'https://www.instagram.com/salah.bensarar/',
+                      placeholderStyle: const TextStyle(
+                        color: Colors.black,
+                        fontSize: 12,
+                        fontFamily: 'Poppins',
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ),
+        ),
+      ],
     );
   }
 }
