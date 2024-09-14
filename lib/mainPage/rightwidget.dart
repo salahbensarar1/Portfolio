@@ -1,11 +1,9 @@
 // ignore: file_names
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/widgets.dart';
+import 'package:portfolio_/mainPage/appBarCompo/Contact.dart';
 import 'package:portfolio_/mainPage/imagesvg.dart';
 import 'package:flutter/material.dart';
 import 'package:social_media_flutter/widgets/icons.dart';
 import 'package:social_media_flutter/widgets/text.dart';
-import 'package:image_card/image_card.dart';
 
 class RightWidget extends StatelessWidget {
   const RightWidget({super.key});
@@ -19,18 +17,24 @@ class RightWidget extends StatelessWidget {
         children: [
           AppBar(
             backgroundColor: Colors.white,
-            actions: const <Widget>[
+            actions: <Widget>[
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
                   TextButton(
-                      onPressed: null,
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const Contact()),
+                        );
+                      },
                       child: Text(
                         'Contact',
                         style: TextStyle(
                           fontFamily: "Poppins",
-                          fontSize: 11,
+                          fontSize: 13,
                         ),
                       )),
                   TextButton(
@@ -39,7 +43,7 @@ class RightWidget extends StatelessWidget {
                         'About me',
                         style: TextStyle(
                           fontFamily: "Poppins",
-                          fontSize: 11,
+                          fontSize: 13,
                         ),
                       )),
                   TextButton(
@@ -48,7 +52,7 @@ class RightWidget extends StatelessWidget {
                         'Service',
                         style: TextStyle(
                           fontFamily: "Poppins",
-                          fontSize: 11,
+                          fontSize: 13,
                         ),
                       )),
                 ],
@@ -60,7 +64,7 @@ class RightWidget extends StatelessWidget {
             alignment: Alignment.topRight,
             child: const SvgLogo(),
           ),
-          MediaWidget(),
+          const MediaWidget(),
         ],
       ),
     );
@@ -113,7 +117,7 @@ class MediaWidget extends StatelessWidget {
                       iconData: SocialIconsFlutter.github,
                       iconColor: const Color.fromARGB(255, 90, 88, 88),
                       iconSize: 12,
-            
+
                       link:
                           'https://github.com/salahbensarar1', //provide the link
                       placeholderStyle: const TextStyle(

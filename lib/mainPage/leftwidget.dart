@@ -1,7 +1,6 @@
 // ignore: file_names
 import 'package:flutter/material.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
-import 'package:flutter/widgets.dart';
 // import 'package:portfolio_/mainPage/imagesvg.dart';
 
 class LeftWidget extends StatefulWidget {

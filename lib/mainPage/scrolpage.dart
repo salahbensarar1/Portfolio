@@ -11,8 +11,8 @@ class _ProjectResumeState extends State<ProjectResume> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: new Column(
-        children: <Widget>[
+      body: const Column(
+        children: const <Widget>[
           Text(
               'A passionate computer science engineering student based in Hungary with roots in the beautiful landscapes of Morocco. '),
           Text(
