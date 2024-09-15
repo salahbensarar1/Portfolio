@@ -1,14 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio_/mainPage/rightwidget.dart';
 
-class Contact extends StatefulWidget {
-  const Contact({super.key});
+class AboutMe extends StatelessWidget {
+  const AboutMe({super.key});
 
-  @override
-  State<Contact> createState() => _ContactState();
-}
-
-class _ContactState extends State<Contact> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,7 +18,7 @@ class _ContactState extends State<Contact> {
         ),
       ),
       body: Column(
-        children: [MediaWidget()],
+        children: [],
       ),
     );
   }

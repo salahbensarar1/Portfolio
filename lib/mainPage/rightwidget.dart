@@ -1,7 +1,8 @@
+import 'package:flutter/material.dart';
 // ignore: file_names
 import 'package:portfolio_/mainPage/appBarCompo/Contact.dart';
+import 'package:portfolio_/mainPage/appBarCompo/aboutme.dart';
 import 'package:portfolio_/mainPage/imagesvg.dart';
-import 'package:flutter/material.dart';
 import 'package:social_media_flutter/widgets/icons.dart';
 import 'package:social_media_flutter/widgets/text.dart';
 
@@ -30,7 +31,7 @@ class RightWidget extends StatelessWidget {
                               builder: (context) => const Contact()),
                         );
                       },
-                      child: Text(
+                      child: const Text(
                         'Contact',
                         style: TextStyle(
                           fontFamily: "Poppins",
@@ -38,8 +39,14 @@ class RightWidget extends StatelessWidget {
                         ),
                       )),
                   TextButton(
-                      onPressed: null,
-                      child: Text(
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const AboutMe()),
+                        );
+                      },
+                      child: const Text(
                         'About me',
                         style: TextStyle(
                           fontFamily: "Poppins",
@@ -47,8 +54,14 @@ class RightWidget extends StatelessWidget {
                         ),
                       )),
                   TextButton(
-                      onPressed: null,
-                      child: Text(
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const Contact()),
+                        );
+                      },
+                      child: const Text(
                         'Service',
                         style: TextStyle(
                           fontFamily: "Poppins",
@@ -64,7 +77,6 @@ class RightWidget extends StatelessWidget {
             alignment: Alignment.topRight,
             child: const SvgLogo(),
           ),
-          const MediaWidget(),
         ],
       ),
     );
